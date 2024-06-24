@@ -34,7 +34,7 @@ An HTML document typically consists of a hierarchy of elements enclosed within a
 </html>
 ```
 **5. Semantics:**
-HTML5 introduced semantic elements (<header>, <footer>, <nav>, <section>, <article>, <aside>, <main>, <figure>, <figcaption>, etc.) that provide meaning to the content, improving accessibility, SEO, and structuring flexibility.
+HTML5 introduced semantic elements `(<header>, <footer>, <nav>, <section>, <article>, <aside>, <main>, <figure>, <figcaption>, etc.)` that provide meaning to the content, improving accessibility, SEO, and structuring flexibility.
 **6. Hyperlinks and Images::**
 HTML allows embedding hyperlinks (<a> tags) to navigate between pages or sections within a page, and embedding images (<img> tags) to display graphics.
 
