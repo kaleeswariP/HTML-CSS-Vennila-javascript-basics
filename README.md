@@ -1147,5 +1147,89 @@ Sass significantly improves the CSS development process, making it more efficien
 # LESS
 
 # Vennila Javascript
+Vanilla JavaScript refers to using plain, standard JavaScript without any additional libraries or frameworks. It's about relying solely on the core capabilities of JavaScript as defined by the ECMAScript standard.
+
+## Key Concepts of Vanilla JavaScript
+* Basic Syntax
+* DOM Manipulation
+* Event Handling
+* AJAX
+* Functions
+* ES6+ features
+
+## Basic Syntax:
+Understanding the basic syntax of JavaScript, including variables, data types, operators, and expressions.
+
+```javascript
+let name = "John";
+let age = 30;
+let isMarried = false;
+```
+## DOM Manipulation:
+Interacting with the Document Object Model (DOM) to dynamically update the content and structure of web pages.
+```javascript
+document.getElementById('myElement').innerHTML = 'Hello, World!';
+```
+## Event Handling:
+Adding interactivity to web pages by handling events like clicks, mouse movements, and form submissions.
+```javascript
+document.getElementById('myButton').addEventListener('click', function() {
+    alert('Button clicked!');
+});
+```
+## AJAX:
+Making asynchronous HTTP requests to communicate with servers and update web content without reloading the page.
+```javascript
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.example.com/data', true);
+xhr.onload = function() {
+    if (xhr.status === 200) {
+        console.log(xhr.responseText);
+    }
+};
+xhr.send();
+```
+## Functions:
+Defining and using functions for reusable code blocks.
+```javascript
+function greet(name) {
+    return 'Hello, ' + name + '!';
+}
+console.log(greet('Alice'));
+```
+## ES6+ Features:
+Utilizing modern JavaScript features introduced in ECMAScript 6 (ES6) and later versions, such as let/const, arrow functions, template literals, destructuring, and modules.
+```javascript
+`const greet = (name) => `Hello, ${name}!`;
+console.log(greet('Alice'));
+```
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanilla JavaScript Example</title>
+</head>
+<body>
+  <h1 id="title">Welcome to Vanilla JavaScript</h1>
+  <button id="changeTextButton">Change Text</button>
+  <div id="content">This is some content.</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+```javascript
+document.getElementById('changeTextButton').addEventListener('click', function() {
+  document.getElementById('title').textContent = 'Text Changed!';
+  document.getElementById('content').textContent = 'The content has been updated.';
+});
+```
+
 
 
