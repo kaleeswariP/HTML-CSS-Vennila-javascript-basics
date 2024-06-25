@@ -1,5 +1,6 @@
-# html-css-basics
+# HTML-CSS-vanilla javascript-basics
 
+# HTML
 ## Definition
 HTML, which stands for HyperText Markup Language, is the standard markup language used to create and structure content on web pages. It provides a way to describe the structure of web documents using a system of tags and attributes.
 
@@ -455,5 +456,138 @@ The `<input>` tag in HTML is used to create interactive controls within a web fo
 </script>
 ```
 
+# CSS
+CSS (Cascading Style Sheets) is essential for designing and styling web pages. Understanding the important topics in CSS will help you create visually appealing and responsive web designs.
+* **Selectors**
+* **Box Model**
+* **Layout Techniques**
+* **Typography**
+* **Colors and Backgrounds**
+* **Responsive Design**
+* **CSS Variables**
+* **Transitions and Animations**
+* **CSS Preprocessors**
+* **Best Practices**
+
+## Selectors
+**Basic Selectors:** Type, class, ID selectors `(h1, .class, #id)`<br>
+**Attribute Selectors:** Select elements based on attributes `(input[type="text"])`<br>
+**Pseudo-classes:** Select elements in a specific state `(:hover, :focus, :nth-child)`<br>
+**Pseudo-elements:** Select and style parts of elements `(::before, ::after)`<br>
+
+## Box Model
+**Content:** The actual content of the box, where text and images appear<br>
+**Padding:** Clears an area around the content `(inside the border)`<br>
+**Border:** A border that goes around the padding and content<br>
+**Margin:** Clears an area outside the border `(outside the box)`<br>
+**box-sizing:** Property to include padding and border in an element's total width and height.<br>
+
+## Layout Techniques
+**Display:** block, inline, inline-block, none, flex, grid<br>
+**Positioning:** static, relative, absolute, fixed, sticky<br>
+**Float and Clear:** Used for floating elements and clearing floats<br>
+**Flexbox:** A layout model for arranging items in a container `(display: flex)`<br>
+**CSS Grid:** A layout system for creating grid-based designs `(display: grid)`<br>
+
+## Typography
+**Font Properties:** `font-family`, `font-size`, `font-weight`, `font-style`<br>
+**Text Properties:** `color`, `text-align`, `text-decoration`, `text-transform`, `line-height`, `letter-spacing`<br>
+
+## Colors and Backgrounds
+**Color:** `color`, `background-color`<br>
+**Background:** `background-image`, `background-position`, `background-size`, `background-repeat`<br>
+**Gradients:** Linear and radial gradients `(linear-gradient, radial-gradient)`<br>
+
+## Responsive Design
+**Media Queries:** `@media` to apply styles based on device characteristics `(width, height, orientation)`<br>
+**Viewport Meta Tag:** Ensures proper scaling and rendering on mobile devices<br>
+**Flexible Units:** `em`, `rem`, `vw`, `vh`, `%` for responsive sizing.<br>
+
+## CSS Variables
+**Custom Properties:** `--variable-name` and `var(--variable-name)` to reuse values.<br>
+
+## Transitions and Animations
+**Transitions:** Smooth changes between styles `(transition, transition-property, transition-duration)`<br>
+**Animations:** Keyframe animations ``(`@keyframes`, `animation`, `animation-name`, `animation-duration`)``<br>
+
+## CSS Preprocessors
+**Sass/SCSS:** Enhances CSS with variables, nested rules, mixins, and functions<br>
+**Less:** Another CSS preprocessor with similar features to Sass.<br>
+
+## Best Practices
+**Maintainability:** Writing clean, well-organized CSS<br>
+**Modularity:** Using components and reusing styles<br>
+**BEM Methodology:** Block-Element-Modifier for naming conventions<br>
+**Performance:** Minimizing CSS to reduce load times<br>
+
+## Basic sample
+```css
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Example</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --font-size: 16px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: var(--font-size);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .box {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border: 2px solid #27ae60;
+            flex: 1;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+</body>
+</html>
+```
+
+# Vennila Javascript
 
 
