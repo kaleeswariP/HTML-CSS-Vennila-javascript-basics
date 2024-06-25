@@ -473,17 +473,19 @@ CSS (Cascading Style Sheets) is essential for designing and styling web pages. U
 ### **Basic Selectors:** Type, class, ID selectors `(h1, .class, #id)`<br>
 #### Type selector
 *Description:* Select all elements of a given type.
-*Syntax:* element
+
+*Syntax:* element<br>
 Example:
 ```css
 p {
     color: blue;
 }
 ```
-This selects all <p> elements and sets their text color to blue.
+This selects all `<p>` elements and sets their text color to blue.
 #### Class Selector
 *Description:* Selects all elements with a given class attribute.
-*Syntax:* .class
+
+*Syntax:* `.class`<br>
 Example:
 ```css
 .highlight {
@@ -494,7 +496,8 @@ This selects all elements with the class highlight and sets their background col
 
 #### ID Selector
 *Description:* Select a single element with a given ID attribute.
-*Syntax:* #id
+
+*Syntax:* `#id`<br>
 Example:
 ```css
 #header {
@@ -506,79 +509,108 @@ This selects the element with the ID header and sets its font size to 24 pixels.
 ### **Attribute Selectors:** Select elements based on attributes `(input[type="text"])`<br>
 #### Basic Attribute Selector
 *Description:* Selects elements with a specific attribute.
-*syntax:* `[attribute]`
+
+*syntax:* `[attribute]`<br>
 Example:
 ```css
 [type="text"] {
     border: 1px solid #000;
 }
 ```
-This selects all elements with type="text" and sets their border.
+This selects all elements with `type="text"` and sets their border.
 
 #### Attribute Value Selector
-*Description:* Selects elements with an attribute value exactly equal to a specified value.
-*Syntax:* `[attribute="value"]`
+*Description:* Selects elements with an attribute value equal to a specified value.
+
+*Syntax:* `[attribute="value"]`<br>
 Example:
 ```css
 a[target="_blank"] {
     color: red;
 }
 ```
-This selects all <a> elements with target="_blank" and sets their text color to red.
+This selects all `<a>` elements with `target="_blank"` and sets their text color to red.
 
 ### Combinator Selectors
 #### Descendant Selector
 *Description:* Selects all elements that are descendants of a specified element.
-*Syntax:* ancestor descendant
+
+*Syntax:* `ancestor-descendant`<br>
 Example:
 ```css
 div p {
     margin: 0;
 }
 ```
-This selects all <p> elements inside a <div> and sets their margin to 0.
+This selects all `<p>` elements inside a `<div>` and sets their margin to 0.
 #### Child Selector
 *Description:* Selects all elements that are direct children of a specified element.
-*Syntax:* parent > child
+
+*Syntax:* `parent > child`<br>
 Example:
 ```css
 ul > li {
     list-style-type: none;
 }
-``
-This selects all <li> elements that are direct children of a <ul> and removes their list bullets.
+```
+This selects all `<li>` elements that are direct children of a `<ul>` and removes their list bullets.
 #### Adjacent Sibling Selector
-*Description:* Selects an element that is immediately preceded by a specified element.
-*Syntax:* prev + next
+*Description:* Select an element immediately preceded by a specified element.
+
+*Syntax:* `prev + next`<br>
 Example:
 ```css
 h1 + p {
     font-style: italic;
 }
 ```
-This selects the first <p> element immediately following an <h1> and sets its font style to italic.
+This selects the first `<p>` element following an `<h1>` and sets its font style to italic.
 #### General Sibling Selector
 *Description:* Select all elements that are siblings of a specified element.
-*Syntax:* prev ~ siblings
+
+*Syntax:* `prev ~ siblings`<br>
 Example:
 ```css
 h1 ~ p {
     color: gray;
 }
 ```
-This selects all <p> elements that are siblings of an <h1> and sets their text color to gray.
+This selects all `<p>` elements that are siblings of an `<h1>` and sets their text color to gray.
+
+#### Universal Selector
+*Description:* Select all elements.
+
+*Syntax:* `*`<br>
+Example:
+```css
+* {
+    box-sizing: border-box;
+}
+```
+This applies `box-sizing: border-box` to all elements.
+#### Grouping Selector
+*Description:* Applies the same styles to multiple selectors.
+*Syntax:* `selector1, selector2, selector3`<br>
+Example:
+```css
+h1, h2, h3 {
+    margin-bottom: 10px;
+}
+```
+This sets the bottom margin of all `<h1>`, `<h2>`, and `<h3>` elements to 10 pixels.
 
 ### **Pseudo-classes:** 
 Select elements in a specific state `(:hover, :focus, :nth-child)`<br>
 *Description:* Select elements based on their state.
-*Syntax:* :pseudo-class
+
+*Syntax:* `:pseudo-class`<br>
 Examples:
 ```css
 a:hover {
     text-decoration: underline;
 }
 ```
-This selects all <a> elements when hovered over and underlines their text.
+This selects all `<a>` elements when hovered over and underlines their text.
 ```css
 :nth-child(odd) {
     background-color: #f9f9f9;
@@ -588,22 +620,110 @@ This selects every odd child element and sets its background color.
 
 ### **Pseudo-elements:** 
 Select and style parts of elements `(::before, ::after)`<br>
-*Description:* Select and style parts of elements.
-*Syntax:* ::pseudo-element
+*Description:* Select and style parts of elements.<br>
+*Syntax:* `::pseudo-element`<br>
 Examples:
 ```css
 p::first-line {
     font-weight: bold;
 }
 ```
-This selects the first line of every <p> element and makes it bold.
+This selects the first line of every `<p>` element and makes it bold.
 ```css
 `div::before {
     content: "Note: ";
     color: red;
 }
 ```
-This inserts "Note: " before the content of every <div> element.
+This inserts "Note: " before the content of every `<div>` element.
+
+**Example of Using Multiple Selectors**
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Example</title>
+    <style>
+        /* Type Selector */
+        p {
+            color: blue;
+        }
+
+        /* Class Selector */
+        .highlight {
+            background-color: yellow;
+        }
+
+        /* ID Selector */
+        #main-header {
+            font-size: 24px;
+        }
+
+        /* Attribute Selector */
+        [type="text"] {
+            border: 1px solid #000;
+        }
+
+        /* Descendant Selector */
+        div p {
+            margin: 0;
+        }
+
+        /* Child Selector */
+        ul > li {
+            list-style-type: none;
+        }
+
+        /* Adjacent Sibling Selector */
+        h1 + p {
+            font-style: italic;
+        }
+
+        /* General Sibling Selector */
+        h1 ~ p {
+            color: gray;
+        }
+
+        /* Pseudo-class */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Pseudo-element */
+        p::first-line {
+            font-weight: bold;
+        }
+
+        /* Universal Selector */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Grouping Selector */
+        h1, h2, h3 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-header">Welcome to My Website</h1>
+    <p>This is a paragraph.</p>
+    <p class="highlight">This is a highlighted paragraph.</p>
+    <div>
+        <p>Paragraph inside a div.</p>
+    </div>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+    </ul>
+    <a href="#">Hover over me</a>
+    <p>Another paragraph.</p>
+</body>
+</html>
+```
 
 ## Box Model
 The CSS box model is a fundamental concept for understanding how elements are rendered on a web page. It consists of several properties that define the space around elements.
@@ -612,7 +732,7 @@ The CSS box model is a fundamental concept for understanding how elements are re
 **Padding:** Clears an area around the content `(inside the border)`<br>
 **Border:** A border that goes around the padding and content<br>
 **Margin:** Clears an area outside the border `(outside the box)`<br>
-**box-sizing:** Property to include padding and border in an element's total width and height.<be>
+**box-sizing:** Property to include padding and border in an element's total width and height.<br>
 #### Visual Representation
 ```lua
 +-------------------------------------------+
@@ -786,6 +906,245 @@ Example
 </body>
 </html>
 ```
+
+# SASS
+
+Sass (Syntactically Awesome Stylesheets) is a preprocessor scripting language that is interpreted or compiled into CSS.
+
+Sass provides more powerful and convenient features compared to standard CSS, making it easier to write and maintain complex stylesheets. 
+
+It includes features like variables, nested rules, mixins, functions, and more, which help streamline the CSS development process.
+
+**Key features**
+* Variables
+* Nesting
+* Patrials and Imports
+* Mixins
+* Inheritance
+* Functions
+* Sass syntax
+
+## Variables
+Variables allow you to store values (such as colors, fonts, or any CSS value) in a variable, making it easier to reuse and maintain.
+
+```scss
+$primary-color: #3498db;
+$font-stack: Helvetica, sans-serif;
+
+body {
+  font-family: $font-stack;
+  color: $primary-color;
+}
+```
+## Nesting
+Nesting allows you to nest your CSS selectors in a way that follows the same visual hierarchy of your HTML. This makes it easier to read and manage.
+
+```scss
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}
+```
+## Partials and Imports
+You can create partial Sass files that contain little snippets of CSS. You can then import these files into a main stylesheet. This helps in organizing CSS into smaller, manageable files.
+
+```scss
+// _reset.scss
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// main.scss
+@import 'reset';
+
+body {
+  font-family: $font-stack;
+  color: $primary-color;
+}
+```
+## Mixins
+Mixins allow you to create reusable chunks of code. You can pass arguments to them to make them even more flexible.
+
+```scss
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.button {
+  @include border-radius(5px);
+}
+```
+## Inheritance
+Sass allows you to share a set of CSS properties from one selector to another using `@extend`.
+
+```scss
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+}
+```
+## Functions
+Sass allows you to define your own functions which can then be reused throughout your stylesheets.
+
+```scss
+@function calculate-rem($size) {
+  $rem-size: $size / 16px;
+  @return #{$rem-size}rem;
+}
+
+body {
+  font-size: calculate-rem(16px);
+}
+
+h1 {
+  font-size: calculate-rem(32px);
+}
+```
+## Sass Syntax
+Sass can be written in two syntaxes:
+
+### SCSS (Sassy CSS)
+SCSS is the newer syntax, and it is a superset of CSS, which means every valid CSS3 stylesheet is a valid SCSS file with the same meaning.<br>
+Files using this syntax have the `.scss` file extension.
+```scss
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+```
+### Indented Syntax (Sass)
+This syntax is older and uses indentation rather than brackets to delimit blocks of code.<br>
+Files using this syntax have the `.sass` file extension.
+```sass
+`$font-stack: Helvetica, sans-serif
+$primary-color: #333
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+```
+## Compiling Sass
+Sass needs to be compiled into regular CSS before it can be used in a web page. There are several ways to compile Sass:
+
+**Command Line:** Using the Sass command line tool.
+```bash
+sass input.scss output.css
+```
+**Task Runners:** Using task runners like Gulp or Grunt.<br>
+**Build Tools:** Using build tools like Webpack.
+
+Example
+Here’s an example of a simple project structure and a compiled CSS output.
+
+SCSS File `(styles.scss)`:
+```scss
+$primary-color: #3498db;
+
+body {
+  font-family: Arial, sans-serif;
+  color: $primary-color;
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.button {
+  @include border-radius(5px);
+  background-color: $primary-color;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+```
+Compiled CSS `(styles.css)`:
+```css
+body {
+  font-family: Arial, sans-serif;
+  color: #3498db;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+```
+Sass significantly improves the CSS development process, making it more efficient, modular, and maintainable.
+
+
+# LESS
 
 # Vennila Javascript
 
