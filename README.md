@@ -470,24 +470,223 @@ CSS (Cascading Style Sheets) is essential for designing and styling web pages. U
 * **Best Practices**
 
 ## Selectors
-**Basic Selectors:** Type, class, ID selectors `(h1, .class, #id)`<br>
-**Attribute Selectors:** Select elements based on attributes `(input[type="text"])`<br>
-**Pseudo-classes:** Select elements in a specific state `(:hover, :focus, :nth-child)`<br>
-**Pseudo-elements:** Select and style parts of elements `(::before, ::after)`<br>
+### **Basic Selectors:** Type, class, ID selectors `(h1, .class, #id)`<br>
+#### Type selector
+*Description:* Select all elements of a given type.
+*Syntax:* element
+Example:
+```css
+p {
+    color: blue;
+}
+```
+This selects all <p> elements and sets their text color to blue.
+#### Class Selector
+*Description:* Selects all elements with a given class attribute.
+*Syntax:* .class
+Example:
+```css
+.highlight {
+    background-color: yellow;
+}
+```
+This selects all elements with the class highlight and sets their background color to yellow.
+
+#### ID Selector
+*Description:* Select a single element with a given ID attribute.
+*Syntax:* #id
+Example:
+```css
+#header {
+    font-size: 24px;
+}
+```
+This selects the element with the ID header and sets its font size to 24 pixels.
+
+### **Attribute Selectors:** Select elements based on attributes `(input[type="text"])`<br>
+#### Basic Attribute Selector
+*Description:* Selects elements with a specific attribute.
+*syntax:* `[attribute]`
+Example:
+```css
+[type="text"] {
+    border: 1px solid #000;
+}
+```
+This selects all elements with type="text" and sets their border.
+
+#### Attribute Value Selector
+*Description:* Selects elements with an attribute value exactly equal to a specified value.
+*Syntax:* `[attribute="value"]`
+Example:
+```css
+a[target="_blank"] {
+    color: red;
+}
+```
+This selects all <a> elements with target="_blank" and sets their text color to red.
+
+### Combinator Selectors
+#### Descendant Selector
+*Description:* Selects all elements that are descendants of a specified element.
+*Syntax:* ancestor descendant
+Example:
+```css
+div p {
+    margin: 0;
+}
+```
+This selects all <p> elements inside a <div> and sets their margin to 0.
+#### Child Selector
+*Description:* Selects all elements that are direct children of a specified element.
+*Syntax:* parent > child
+Example:
+```css
+ul > li {
+    list-style-type: none;
+}
+``
+This selects all <li> elements that are direct children of a <ul> and removes their list bullets.
+#### Adjacent Sibling Selector
+*Description:* Selects an element that is immediately preceded by a specified element.
+*Syntax:* prev + next
+Example:
+```css
+h1 + p {
+    font-style: italic;
+}
+```
+This selects the first <p> element immediately following an <h1> and sets its font style to italic.
+#### General Sibling Selector
+*Description:* Select all elements that are siblings of a specified element.
+*Syntax:* prev ~ siblings
+Example:
+```css
+h1 ~ p {
+    color: gray;
+}
+```
+This selects all <p> elements that are siblings of an <h1> and sets their text color to gray.
+
+### **Pseudo-classes:** 
+Select elements in a specific state `(:hover, :focus, :nth-child)`<br>
+*Description:* Select elements based on their state.
+*Syntax:* :pseudo-class
+Examples:
+```css
+a:hover {
+    text-decoration: underline;
+}
+```
+This selects all <a> elements when hovered over and underlines their text.
+```css
+:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+```
+This selects every odd child element and sets its background color.
+
+### **Pseudo-elements:** 
+Select and style parts of elements `(::before, ::after)`<br>
+*Description:* Select and style parts of elements.
+*Syntax:* ::pseudo-element
+Examples:
+```css
+p::first-line {
+    font-weight: bold;
+}
+```
+This selects the first line of every <p> element and makes it bold.
+```css
+`div::before {
+    content: "Note: ";
+    color: red;
+}
+```
+This inserts "Note: " before the content of every <div> element.
 
 ## Box Model
+The CSS box model is a fundamental concept for understanding how elements are rendered on a web page. It consists of several properties that define the space around elements.
+
 **Content:** The actual content of the box, where text and images appear<br>
 **Padding:** Clears an area around the content `(inside the border)`<br>
 **Border:** A border that goes around the padding and content<br>
 **Margin:** Clears an area outside the border `(outside the box)`<br>
-**box-sizing:** Property to include padding and border in an element's total width and height.<br>
+**box-sizing:** Property to include padding and border in an element's total width and height.<be>
+#### Visual Representation
+```lua
++-------------------------------------------+
+|                  Margin                   |
+|  +-------------------------------------+  |
+|  |              Border                 |  |
+|  |  +-------------------------------+  |  |
+|  |  |            Padding            |  |  |
+|  |  |  +-------------------------+  |  |  |
+|  |  |  |        Content          |  |  |  |
+|  |  |  +-------------------------+  |  |  |
+|  |  +-------------------------------+  |  |
+|  +-------------------------------------+  |
++-------------------------------------------+
+```
 
 ## Layout Techniques
-**Display:** block, inline, inline-block, none, flex, grid<br>
+**Display:** block, inline, inline-block, none, flex, grid.<br>
+
+ It determines how an element is displayed in the document flow.
+ 
+`display: block` *Description:* Block-level elements take up the full width available and start on a new line.
+
+`display: inline` *Description:* Inline elements do not start on a new line and only take up as much width as necessary. 
+
+`display: inline-block` *Description:* Inline-block elements are like inline elements but can have width and height.
+
+`display: none` *Description:* The element is not displayed at all `(has no effect on layout)`. It is removed from the document flow.
+
+`display: inline-flex` *Description:* Similar to display: flex, but the element behaves like an inline element while its children behave as flex items.
+
+`display: table` *Description:* The element behaves like a `<table>` element.
+
 **Positioning:** static, relative, absolute, fixed, sticky<br>
 **Float and Clear:** Used for floating elements and clearing floats<br>
 **Flexbox:** A layout model for arranging items in a container `(display: flex)`<br>
+Flexbox Layout `(display: flex)`
+
+*Description:* Flexbox is a layout model designed for distributing space along a single row or column. It’s great for creating flexible and responsive layouts.
+
+*Properties:* `justify-content`, `align-items`, `flex-direction`, `flex-wrap`, `align-content`, `flex-grow`, `flex-shrink`, `flex-basis`.
+
+Example
+```css
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-item {
+    flex: 1;
+    margin: 5px;
+}
+```
 **CSS Grid:** A layout system for creating grid-based designs `(display: grid)`<br>
+*Description:*  The Grid layout system provides a two-dimensional grid-based layout, allowing both rows and columns to be defined.
+
+*Properties:* `grid-template-columns`, `grid-template-rows`, `grid-gap`, `grid-area`, `justify-items`, `align-items`, `grid-column`, `grid-row`.
+
+Example
+```css
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.grid-item {
+    background-color: lightblue;
+    padding: 20px;
+}
+```
 
 ## Typography
 **Font Properties:** `font-family`, `font-size`, `font-weight`, `font-style`<br>
