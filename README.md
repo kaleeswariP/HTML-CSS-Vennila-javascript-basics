@@ -96,7 +96,7 @@ HTML allows embedding hyperlinks `(<a> tags)` to navigate between pages or secti
 </html>
 ```
 
-**CheatSheet**
+**Tags CheatSheet**
 ![Html tags](https://github.com/kaleeswariP/html-css-basics/assets/22699303/1fa38d69-39d8-49ad-b4fb-3ca4b817c94b)
 
 # Questions & Answers:
@@ -455,6 +455,9 @@ The `<input>` tag in HTML is used to create interactive controls within a web fo
         window.onload = setDefaultValues;
 </script>
 ```
+# HTML and CSS CheatSheets
+![HTML and CSS CheatSheet](https://github.com/kaleeswariP/HTML-CSS-Vennila-javascript-basics/assets/22699303/c194181d-ffd8-47bd-8173-ca9d64ca8c67)
+
 
 # CSS
 CSS (Cascading Style Sheets) is essential for designing and styling web pages. Understanding the important topics in CSS will help you create visually appealing and responsive web designs.
